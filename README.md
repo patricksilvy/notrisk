@@ -9,7 +9,7 @@
 ## Features
 
 - [x] Organizar Features
-- [ ] Criação da barra lateral
+- [x] Criação da barra lateral
 - [ ] Criação da área principal (edição e preview)
 - [ ] Área de configurações de aparencia
 - [ ] Dark mode
