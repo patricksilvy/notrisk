@@ -9,6 +9,7 @@
 ## Features
 
 - [x] Organizar Features
+- [x] Criação do cabeçalho
 - [x] Criação da barra lateral
 - [ ] Criação da área principal (edição e preview)
 - [ ] Área de configurações de aparencia
