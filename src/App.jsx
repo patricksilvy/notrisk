@@ -3,6 +3,7 @@ import uuid from 'react-uuid';
 
 import Sidebar from "./components/Sidebar"
 import Header from './components/Header';
+import Main from './components/Main';
 import GlobalStyle from "./styles/global"
 
 function App() {
@@ -49,14 +50,20 @@ function App() {
         sidebar={sidebar}
         setSidebar={setSidebar}
       />
-      <Sidebar
-        sidebar={sidebar}
-        notes={notes}
-        onAddNote={onAddNote}
-        onDeleteNote={onDeleteNote}
-        activeNote={activeNote}
-        setActiveNote={setActiveNote}
-      />
+      <div style={{display: 'flex', width: "100vw"}}>
+        <Sidebar
+          sidebar={sidebar}
+          notes={notes}
+          onAddNote={onAddNote}
+          onDeleteNote={onDeleteNote}
+          activeNote={activeNote}
+          setActiveNote={setActiveNote}
+        />
+        <Main 
+          activeNote={getActiveNote()} 
+          onUpdateNote={onUpdateNote} 
+        />
+      </div>
     </div>
   );
 }

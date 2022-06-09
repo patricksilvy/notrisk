@@ -16,20 +16,18 @@ function Header({
                         scale: 0.8,
                         borderRadius: "100%",
                     }}
+                    onClick={() => setSidebar(!sidebar)}
                 >
-                    <FiChevronsLeft
-                        onClick={() => setSidebar(!sidebar)}
-                    /> 
+                    <FiChevronsLeft/> 
                 </motion.span> : <motion.span
                     whileHover={{ scale: 1.2 }}
                     whileTap={{
                         scale: 0.8,
                         borderRadius: "100%"
                     }}
+                    onClick={() => setSidebar(!sidebar)}
                 >
-                    <FiMenu
-                        onClick={() => setSidebar(!sidebar)}
-                    /> 
+                    <FiMenu/> 
                 </motion.span>
             }
             <h1>Notestrik</h1>

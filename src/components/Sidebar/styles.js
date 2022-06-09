@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const AppSidebar = styled.div `
-    width: 25%;
+    width: 30vw;
     height: calc(100vh - 50px);
     border: 1px solid #ddd;
 `;
@@ -48,6 +48,7 @@ export const AppSidebarNote = styled.div `
 export const AppSidebarNotes = styled.div `
     height: calc(100vh - 78px);
     overflow-y: scroll;
+    overflow-x: hidden;
     padding-bottom: 100px;
 
     ${AppSidebarNote}:hover {
