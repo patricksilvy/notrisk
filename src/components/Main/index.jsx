@@ -1,12 +1,17 @@
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+
 import {
     Container,
     AppMainNoteEdit,
-    AppMainNotePreview
+    AppMainNotePreview,
+    NotNoteActive
 } from './styles'
 
 function Main({ 
-    activeNote, onUpdateNote 
+    sidebar,
+    activeNote, 
+    onUpdateNote
 }) {
     const onEditField = (field, value) => {
         onUpdateNote({
@@ -16,10 +21,9 @@ function Main({
         });
       };
 
-    if (!activeNote) return <div className="no-active-note">No Active Note</div>;
-    return (
-        <Container>
-            <AppMainNoteEdit>
+    return activeNote ? (
+        <Container sidebar={sidebar}>
+            <AppMainNoteEdit sidebar={sidebar}>
                 <input
                     type="text"
                     id="title"
@@ -35,13 +39,17 @@ function Main({
                     onChange={(e) => onEditField("body", e.target.value)}
                 />
             </AppMainNoteEdit>
-            <AppMainNotePreview>
+            <AppMainNotePreview sidebar={sidebar}>
                 <h1 className="preview-title">{activeNote.title}</h1>
-                <ReactMarkdown className="markdown-preview">
+                <ReactMarkdown remarkPlugins={[remarkGfm]} className="markdown-preview">
                     {activeNote.body}   
                 </ReactMarkdown>
             </AppMainNotePreview>
         </Container>
+    ) : (
+        <NotNoteActive sidebar={sidebar}>
+            <h1>Nenhuma nota selecionada...</h1>
+        </NotNoteActive>
     );
 }
 

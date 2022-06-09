@@ -22,12 +22,28 @@ const Sidebar = ({
     return (
         <motion.div
             initial={ 
-                sidebar ? {x: "-30%" , opacity: 0} : {x: 0, opacity: 1} 
+                sidebar ? {
+                    x: "-30vw" , 
+                    opacity: 0, 
+                    width: "0vw"
+                } : {
+                    x: 0, 
+                    opacity: 1, 
+                    width: "30vw"
+                } 
             }
             animate={ 
-                sidebar ? {x: 0, opacity: 1} : {x: "-30%" , opacity: 0} 
+                sidebar ? {
+                    x: 0, 
+                    opacity: 1,
+                    width: "30vw"
+                } : {
+                    x: "-30vw" , 
+                    opacity: 0,
+                    width: "0vw"
+                } 
             }
-            transition={{ ease: "easeInOut", duration: 0.5 }}
+            transition={{ ease: "easeInOut", duration: 0.3 }}
         >
             <AppSidebar>
                 <AppSidebarHeader>

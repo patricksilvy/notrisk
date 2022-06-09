@@ -60,6 +60,7 @@ function App() {
           setActiveNote={setActiveNote}
         />
         <Main 
+          sidebar={sidebar}
           activeNote={getActiveNote()} 
           onUpdateNote={onUpdateNote} 
         />
