@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 export const AppSidebar = styled.div `
-    width: 30%;
-    height: 100vh;
-    border-right: 1px solid #ddd;
+    width: 25%;
+    height: calc(100vh - 50px);
+    border: 1px solid #ddd;
 `;
 
 export const AppSidebarHeader = styled.div `
@@ -13,6 +13,20 @@ export const AppSidebarHeader = styled.div `
 
     h1 {
         margin: 0;
+    }
+
+    span {
+        height: 40px;
+        border-radius: 100%;
+        transition: background 0.5s;
+
+        svg {
+            font-size: 2.5em;
+        }
+    }
+
+    span:hover {
+        background-color: #ddd;
     }
 `;
 
@@ -34,6 +48,7 @@ export const AppSidebarNote = styled.div `
 export const AppSidebarNotes = styled.div `
     height: calc(100vh - 78px);
     overflow-y: scroll;
+    padding-bottom: 100px;
 
     ${AppSidebarNote}:hover {
         background: #ddd;
@@ -41,7 +56,7 @@ export const AppSidebarNotes = styled.div `
 
     ${AppSidebarNote}.active,
     ${AppSidebarNote}.active small {
-        background: #08c;
+        background: #63A46C;
         color: white;
     }  
 `;
@@ -51,6 +66,10 @@ export const SidebarNoteTitle = styled.div `
     justify-content: space-between;
 
     button {
-        color: crimson;
+        color: #AA4465;
+    }
+
+    button:hover {
+        color: #7B0828;
     }
 `;

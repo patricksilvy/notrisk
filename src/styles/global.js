@@ -25,13 +25,13 @@ export default createGlobalStyle`
         font-size: inherit;
         font-family: inherit;
         cursor: pointer;
-        color: #000;
+        color: #0E0E0E;
     }
     button:hover {
         color: #04c;
     }
 
     .App {
-        display: flex;
+        display: block;
     }
 `;

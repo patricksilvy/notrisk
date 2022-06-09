@@ -2,16 +2,18 @@ import { useState } from 'react'
 import uuid from 'react-uuid';
 
 import Sidebar from "./components/Sidebar"
+import Header from './components/Header';
 import GlobalStyle from "./styles/global"
 
 function App() {
   const [notes, setNotes] = useState([]);
   const [activeNote, setActiveNote] = useState(false);
+  const [sidebar, setSidebar] = useState(true)
 
   const onAddNote = () => {
     const newNote = {
       id: uuid(),
-      title: "Untitled Note",
+      title: "Nota Indefinida",
       body: "",
       lastModified: Date.now(),
     };
@@ -43,7 +45,12 @@ function App() {
   return (
     <div className="App">
       <GlobalStyle/>
+      <Header
+        sidebar={sidebar}
+        setSidebar={setSidebar}
+      />
       <Sidebar
+        sidebar={sidebar}
         notes={notes}
         onAddNote={onAddNote}
         onDeleteNote={onDeleteNote}
