@@ -30,7 +30,7 @@ function Header({
                     <FiMenu/> 
                 </motion.span>
             }
-            <h1>Notestrik</h1>
+            <h1>Notrisk</h1>
             <Switch
                 onChange={() => {}}
                 checked={false}
