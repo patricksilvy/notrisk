@@ -14,8 +14,35 @@ export default createGlobalStyle`
         height: 100vh;
         overflow: hidden;
         font-size: 16px;
-        background: #fff;
+        background: ${props => props.theme.colors.background};
+        color: ${props => props.theme.colors.text};
+
     }
+
+    /* width */
+    ::-webkit-scrollbar {
+        width: 10px;
+        
+    }
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: ${props => props.theme.colors.background};
+        border: 1px solid ${props => props.theme.colors.secundary};
+        border-right: 0;
+        border-top: 0;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: ${props => props.theme.colors.secundary};
+        border-radius: 5px;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #BFBFBF;
+    }
+
 
     button {
         background: none;
@@ -25,10 +52,10 @@ export default createGlobalStyle`
         font-size: inherit;
         font-family: inherit;
         cursor: pointer;
-        color: #0E0E0E;
+        color: #aa4465;
     }
     button:hover {
-        color: #04c;
+        color: #7B0828;
     }
 
     .App {

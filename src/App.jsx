@@ -1,21 +1,37 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
 import uuid from 'react-uuid';
+import { ThemeProvider } from 'styled-components';
 
-import Sidebar from "./components/Sidebar"
+import light from './styles/themes/light';
+import dark from './styles/themes/dark';
+
+import Sidebar from "./components/Sidebar";
 import Header from './components/Header';
 import Main from './components/Main';
-import GlobalStyle from "./styles/global"
+import GlobalStyle from "./styles/global";
 
 function App() {
+  const [theme, setTheme] = useState(
+    localStorage.theme ? JSON.parse(localStorage.theme) : light
+  );
   const [notes, setNotes] = useState(
     localStorage.notes ? JSON.parse(localStorage.notes) : []
   );
+
   const [activeNote, setActiveNote] = useState(false);
   const [sidebar, setSidebar] = useState(true)
 
   useEffect(() => {
     localStorage.setItem("notes", JSON.stringify(notes));
   }, [notes]);
+
+  useEffect(() => {
+    localStorage.setItem("theme", JSON.stringify(theme))
+  }, [theme])
+
+  const toggleTheme = () => {
+    setTheme(theme.title === 'light' ? dark : light)
+  }
 
   const onAddNote = () => {
     const newNote = {
@@ -50,28 +66,31 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <GlobalStyle/>
-      <Header
-        sidebar={sidebar}
-        setSidebar={setSidebar}
-      />
-      <div style={{display: 'flex', width: "100vw"}}>
-        <Sidebar
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        <GlobalStyle/>
+        <Header
           sidebar={sidebar}
-          notes={notes}
-          onAddNote={onAddNote}
-          onDeleteNote={onDeleteNote}
-          activeNote={activeNote}
-          setActiveNote={setActiveNote}
+          setSidebar={setSidebar}
+          toggleTheme={toggleTheme}
         />
-        <Main 
-          sidebar={sidebar}
-          activeNote={getActiveNote()} 
-          onUpdateNote={onUpdateNote} 
-        />
+        <div style={{display: 'flex', width: "100vw"}}>
+          <Sidebar
+            sidebar={sidebar}
+            notes={notes}
+            onAddNote={onAddNote}
+            onDeleteNote={onDeleteNote}
+            activeNote={activeNote}
+            setActiveNote={setActiveNote}
+          />
+          <Main 
+            sidebar={sidebar}
+            activeNote={getActiveNote()} 
+            onUpdateNote={onUpdateNote} 
+          />
+        </div>
       </div>
-    </div>
+    </ThemeProvider>
   );
 }
 

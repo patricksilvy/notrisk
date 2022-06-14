@@ -14,13 +14,17 @@ export const AppMainNoteEdit = styled.div`
     input {
         font-size: 32px;
         margin-bottom: 25px;
+        color: ${props => props.theme.colors.text};
+        background-color: ${props => props.theme.colors.background};
     }
 
     textarea {
         height: calc(100vh - 78px);
         overflow-y: scroll;
         padding-bottom: 100px;
-    }   
+        color: ${props => props.theme.colors.text};
+        background-color: ${props => props.theme.colors.background};
+    }     
 `;
 
 export const AppMainNotePreview = styled.div `
@@ -37,6 +41,6 @@ export const NotNoteActive = styled.div `
     align-items: center;
     
     h1 {
-        color: #444;
+        color: ${props => props.theme.colors.text};
     }
 `;

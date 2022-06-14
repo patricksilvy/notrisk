@@ -3,13 +3,14 @@ import styled from 'styled-components';
 export const AppSidebar = styled.div `
     width: 30vw;
     height: calc(100vh - 50px);
-    border: 1px solid #ddd;
+    border: 1px solid ${props => props.theme.colors.secundary};
 `;
 
 export const AppSidebarHeader = styled.div `
     display: flex;
     justify-content: space-between;
     padding: 25px;
+    border-bottom: 1px solid ${props => props.theme.colors.secundary};
 
     h1 {
         margin: 0;
@@ -43,7 +44,7 @@ export const AppSidebarNote = styled.div `
         display: block;
         color: #999;
     }
-    `;
+`;
 
 export const AppSidebarNotes = styled.div `
     height: calc(100vh - 78px);
@@ -52,7 +53,7 @@ export const AppSidebarNotes = styled.div `
     padding-bottom: 100px;
 
     ${AppSidebarNote}:hover {
-        background: #ddd;
+        background: ${props => props.theme.colors.secundary};
     }
 
     ${AppSidebarNote}.active,

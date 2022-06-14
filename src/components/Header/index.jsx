@@ -1,12 +1,17 @@
+import { useContext } from 'react';
 import { Container } from './styles'
 import Switch from 'react-switch';
 import { FiChevronsLeft, FiMenu } from 'react-icons/fi'
 import { motion } from 'framer-motion'
+import { ThemeContext } from 'styled-components';
 
 function Header({
     sidebar,
-    setSidebar
-}) {
+    setSidebar,
+    toggleTheme
+}) {   
+    const { title } = useContext(ThemeContext)
+
     return(
         <Container>
             { sidebar ? 
@@ -32,8 +37,8 @@ function Header({
             }
             <h1>Notrisk</h1>
             <Switch
-                onChange={() => {}}
-                checked={false}
+                onChange={toggleTheme}
+                checked={title === 'dark'}
                 checkedIcon={false}
                 uncheckedIcon={false}
                 height={10}
