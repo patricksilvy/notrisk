@@ -12,7 +12,7 @@
 - [x] Criação do cabeçalho
 - [x] Criação da barra lateral
 - [x] Criação da área principal (edição e preview)
-- [ ] Dark mode
+- [x] Dark mode
 
 ## Pré-requisitos
 
