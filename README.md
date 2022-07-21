@@ -1,6 +1,6 @@
-<h1 align="center">Notas React</h1>
+<h1 align="center">Notrisk</h1>
 
-<p align="center">Aplicação de criação de notas.</p>
+<p align="center">Aplicação de notas com edição em markdown.</p>
 
 <h4 align="center"> 
 	🚧  React Select 🚀 Em construção...  🚧
@@ -23,10 +23,10 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
 
 ```bash
 # Clone este repositório
-$ git clone https://github.com/patricksilvy/notas-react.git
+$ git clone https://github.com/patricksilvy/notrisk.git
 
 # Acesse a pasta do projeto no terminal/cmd
-$ cd notas-react
+$ cd notrisk
 
 # Instale as dependências
 $ yarn install
