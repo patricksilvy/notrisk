@@ -1,10 +1,17 @@
+<p align="center">
+  <img src="https://github.com/patricksilvy/notrisk/blob/master/assets/icon.png" width="200" />
+</p>
+
+
+
 <h1 align="center">Notrisk</h1>
 
-<p align="center">Aplicação de notas com edição em markdown.</p>
+<p align="center"><strong>Aplicação de notas com edição em markdown.</strong></p>
 
-<h4 align="center"> 
-	🚧  React Select 🚀 Em construção...  🚧
-</h4>
+## ▶️ Pré-visualidação
+<p align="center">
+  <img src="https://github.com/patricksilvy/notrisk/blob/master/assets/layout.gif"/>
+</p>
 
 ## Features
 
